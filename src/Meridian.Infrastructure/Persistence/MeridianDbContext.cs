@@ -1,14 +1,12 @@
-using MediatR;
 using Meridian.Domain.Accounts;
 using Meridian.Domain.Common;
 using Meridian.Domain.Transactions;
 using Meridian.Infrastructure.Outbox;
 using Microsoft.EntityFrameworkCore;
-using System.Text.Json;
 
 namespace Meridian.Infrastructure.Persistence;
 
-public class MeridianDbContext(DbContextOptions<MeridianDbContext> options, IPublisher publisher)
+public class MeridianDbContext(DbContextOptions<MeridianDbContext> options)
     : DbContext(options)
 {
     public DbSet<Account> Accounts => Set<Account>();
